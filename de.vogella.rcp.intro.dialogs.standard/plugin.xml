@@ -35,5 +35,24 @@
             name="openDialog ">
       </command>
    </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="dialog">
+            <command
+                  commandId="de.vogella.rcp.intro.dialogs.standard.openDialog"
+                  label="openDialog "
+                  style="push"
+                  tooltip="openDialog the application">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
 
 </plugin>
