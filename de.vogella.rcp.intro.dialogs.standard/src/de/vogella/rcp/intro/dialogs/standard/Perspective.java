@@ -7,5 +7,6 @@ public class Perspective implements IPerspectiveFactory {
 
 	public void createInitialLayout(IPageLayout layout) {
 		System.out.println("aaa");
+		System.out.println("aaa");
 	}
 }
