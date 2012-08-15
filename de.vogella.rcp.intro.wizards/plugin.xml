@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.vogella.rcp.intro.wizards.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.vogella.rcp.intro.wizards.Perspective"
+            id="de.vogella.rcp.intro.wizards.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="de.vogella.rcp.intro.dialogs.custom.application"
+            name="DeplayTest">
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.vogella.rcp.intro.wizards.ShowWizard"
+            id="de.vogella.rcp.intro.wizards.showWizard"
+            name="showWizard">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="wizard ">
+            <command
+                  commandId="de.vogella.rcp.intro.wizards.showWizard"
+                  label="showWizard"
+                  style="push"
+                  tooltip="showWizard the application">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>
