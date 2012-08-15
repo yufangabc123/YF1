@@ -7,7 +7,7 @@
          point="org.eclipse.core.runtime.applications">
       <application>
          <run
-               class="de.vogella.rcp.intro.dialogs.selection.Application">
+               class="de.vogella.rcp.intro.dialogs.custom.Application">
          </run>
       </application>
    </extension>
@@ -15,25 +15,28 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             name="RCP Perspective"
-            class="de.vogella.rcp.intro.dialogs.selection.Perspective"
-            id="de.vogella.rcp.intro.dialogs.selection.perspective">
+            class="de.vogella.rcp.intro.dialogs.custom.Perspective"
+            id="de.vogella.rcp.intro.dialogs.custom.perspective">
       </perspective>
    </extension>
    <extension
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            application="de.vogella.rcp.intro.dialogs.selection.application"
+            application="de.vogella.rcp.intro.dialogs.custom.application"
             name="DeplayTest">
       </product>
    </extension>
    <extension
          point="org.eclipse.ui.commands">
       <command
-            defaultHandler="de.vogella.rcp.intro.dialogs.selection.SelectionDialog"
-            id="de.vogella.rcp.intro.dialogs.selection.selectionDialog "
-            name="Selection">
+            defaultHandler="de.vogella.rcp.intro.dialogs.custom.OpenMyDialog"
+            id="de.vogella.rcp.intro.dialogs.custom.openMyDialog "
+            name="openMyDialog ">
       </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -41,18 +44,15 @@
             allPopups="false"
             locationURI="menu:org.eclipse.ui.main.menu">
          <menu
-               label="dialog">
+               label="Dialog">
             <command
-                  commandId="de.vogella.rcp.intro.dialogs.selection.selectionDialog "
-                  label="Selection"
+                  commandId="de.vogella.rcp.intro.dialogs.custom.openMyDialog "
+                  label="openMyDialog "
                   style="push"
-                  tooltip="Selection the application">
+                  tooltip="openMyDialog the application">
             </command>
          </menu>
       </menuContribution>
-   </extension>
-   <extension
-         point="org.eclipse.ui.commands">
    </extension>
 
 </plugin>
