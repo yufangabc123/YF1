@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="rcp.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="rcp.Perspective"
+            id="rcp.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="rcp.application"
+            name="Hello RCP">
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="product1"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="rcp.application"
+            name="DeplayTest">
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="Test"
+            id="rcp.command1"
+            name="Exit">
+      </command>
+      <command
+            defaultHandler="A"
+            id="rcp.command2"
+            name="cut">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="Edit">
+            <command
+                  commandId="rcp.command2"
+                  label="cut"
+                  style="push">
+            </command>
+         </menu>
+         <menu
+               id="fileMenu"
+               label="file">
+            <command
+                  commandId="rcp.command1"
+                  label="Exit"
+                  style="push"
+                  tooltip="Exit the application">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>
