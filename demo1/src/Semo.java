@@ -217,6 +217,13 @@ public class Semo {
 		tabItem_5.setText("\u65E5\u5FD7\u6570\u636E");
 		sashForm_1.setWeights(new int[] {1, 1});
 		sashForm.setWeights(new int[] {205, 472});
-
+        
+		shlAbc.open();
+		while(!shlAbc.isDisposed()){
+        	if(!display.readAndDispatch()){
+        		display.sleep();
+        	}
+        }
+		display.dispose();
 	}
 }
